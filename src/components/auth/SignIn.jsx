@@ -33,7 +33,7 @@ function SignIn({ setUser }) {
 
   return (
     <div className="p-4 flex items-center justify-center">
-      <div className="bg-white dark:bg-gray-800 p-4 rounded shadow w-full max-w-md">
+      <div className="bg-white p-4 rounded shadow w-full max-w-md">
         <h2 className="text-xl font-bold mb-4">Sign In</h2>
         {error && <p className="text-red-500 mb-2">{error}</p>}
         <form onSubmit={handleSignIn}>
@@ -42,7 +42,7 @@ function SignIn({ setUser }) {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
             required
           />
           <input
@@ -50,7 +50,7 @@ function SignIn({ setUser }) {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
             required
           />
           <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">

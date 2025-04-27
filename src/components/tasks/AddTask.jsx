@@ -51,8 +51,8 @@ function AddTask({ user, setTasks, onClose = () => {} }) {
 
   if (!user) {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
+      <div className="fixed inset-0 bg-[#ffff] bg-opacity-50 flex items-center justify-center">
+        <div className="bg-white p-4 rounded shadow">
           <p>Please sign in to add a task.</p>
           <Link to="/signin" className="text-blue-500 hover:underline">
             Sign In
@@ -69,42 +69,42 @@ function AddTask({ user, setTasks, onClose = () => {} }) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white dark:bg-gray-800 p-4 rounded shadow w-full max-w-md">
-        <h2 className="text-xl font-bold mb-4">Add Task</h2>
+    <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white p-4 rounded shadow w-full max-w-md">
+        <h2 className="text-2xl text-[#A2B8F9] font-bold mb-4">Add Task</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
             required
           />
           <textarea
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
           />
           <input
             type="date"
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
             required
           />
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
             required
           />
           <select
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
           >
             <option value="low">Low</option>
             <option value="medium">Medium</option>
@@ -115,14 +115,14 @@ function AddTask({ user, setTasks, onClose = () => {} }) {
             placeholder="Duration (days)"
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
           />
           <input
             type="text"
             placeholder="Tags (comma-separated)"
             value={tags}
             onChange={(e) => setTags(e.target.value)}
-            className="w-full p-2 mb-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="w-full p-2 mb-2 rounded bg-[#A2B8F9] text-white"
           />
           <div className="flex justify-end">
             <button

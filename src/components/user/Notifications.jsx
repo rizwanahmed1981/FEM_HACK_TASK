@@ -7,7 +7,7 @@ function Notifications({ user }) {
   if (!user) {
     return (
       <div className="p-4">
-        <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <div className="bg-[#A2B8F9] p-4 rounded shadow">
           <p>Please sign in to view notifications.</p>
           <Link to="/signin" className="text-blue-500 hover:underline">Sign In</Link>
         </div>
@@ -18,7 +18,7 @@ function Notifications({ user }) {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Notifications</h1>
-      <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
+      <div className="bg-[#A2B8F9] p-4 rounded shadow">
         {notifications.length === 0 ? (
           <p>No notifications yet.</p>
         ) : (

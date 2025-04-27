@@ -15,7 +15,7 @@ function TaskList({ user, status }) {
   if (!user) {
     return (
       <div className="p-4">
-        <div className="bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <div className="bg-white p-4 rounded shadow">
           <p>Please sign in to view tasks.</p>
           <Link to="/signin" className="text-blue-500 hover:underline">Sign In</Link>
         </div>

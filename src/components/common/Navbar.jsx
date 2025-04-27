@@ -17,11 +17,11 @@ function Navbar({ user }) {
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
+    
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 p-4 flex justify-between items-center">
-      <div className="text-xl font-bold">Logo</div>
+    <nav className="bg-white p-4 flex justify-end items-center shadow rounded-b-2xl">
       <div className="flex items-center space-x-4">
         <div className="relative">
           <input
@@ -30,7 +30,7 @@ function Navbar({ user }) {
             value={searchQuery}
             onChange={handleSearch}
             onFocus={() => setIsSearchOpen(true)}
-            className="p-2 rounded bg-gray-100 dark:bg-gray-700 hidden md:block"
+            className="p-2 rounded bg-[#52538B] text-white hidden md:block outline-0"
           />
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -41,17 +41,17 @@ function Navbar({ user }) {
             </svg>
           </button>
           {isSearchOpen && (
-            <div className="absolute top-12 w-full bg-white dark:bg-gray-800 p-4 shadow-lg z-10">
+            <div className="absolute top-12 w-full bg-[#52538B] text-white p-4 shadow-lg z-10">
               <input
                 type="text"
                 placeholder="Search tasks..."
                 value={searchQuery}
                 onChange={handleSearch}
-                className="p-2 rounded bg-gray-100 dark:bg-gray-700 w-full md:hidden"
+                className="p-2 rounded bg-[#52538B] text-white w-full md:hidden outline-0"
               />
               <div className="mt-2">
                 {searchResults.map((task) => (
-                  <div key={task.id} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <div key={task.id} className="p-2 bg-[#52538B] text-white">
                     {task.title} ({task.priority})
                   </div>
                 ))}

@@ -62,7 +62,7 @@ function Dashboard({ user }) {
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="p-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="p-2 rounded bg-[#A2B8F9] text-white"
           >
             <option value="all">All</option>
             <option value="low">Low</option>
@@ -72,7 +72,7 @@ function Dashboard({ user }) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="p-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="p-2 rounded bg-[#A2B8F9] text-white border-0"
           >
             <option value="createdAt">Created At</option>
             <option value="deadline">Deadline</option>

@@ -21,52 +21,46 @@ function Sidebar({ user }) {
   };
 
   return (
-    <div className="w-64 bg-white dark:bg-gray-800 p-4 flex flex-col justify-between">
-      <div>
-        <h2 className="text-xl font-bold mb-4">Task Management</h2>
-        <nav>
-          <Link to="/" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+    <div className="w-64 bg-[#52538B] text-white p-4 flex flex-col justify-between rounded-br-2xl">
+      <div className="mt-11">
+        <h2 className="text-2xl font-bold mb-4">Task Management</h2>
+        <nav className="text-xl">
+          <Link to="/" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Dashboard
           </Link>
-          <Link to="/completed" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/completed" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Completed Tasks ({taskCounts.completed})
           </Link>
-          <Link to="/pending" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/pending" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Pending Tasks ({taskCounts.pending})
           </Link>
-          <Link to="/in-progress" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/in-progress" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             In Progress Tasks ({taskCounts.inProgress})
           </Link>
-          <Link to="/deployed" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/deployed" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Deployed Tasks ({taskCounts.deployed})
           </Link>
-          <Link to="/deferred" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/deferred" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Deferred Tasks ({taskCounts.deferred})
           </Link>
-          <Link to="/add-task" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/add-task" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Add New Task
           </Link>
         </nav>
       </div>
-      <div>
+      <div className="text-xl">
         {user ? (
           <button
             onClick={handleSignOut}
-            className="block py-2 w-full text-left hover:bg-gray-200 dark:hover:bg-gray-700"
+            className="block py-2 w-full text-left hover:bg-[#ffffff71] rounded px-2"
           >
             Sign Out
           </button>
         ) : (
-          <Link to="/signin" className="block py-2 hover:bg-gray-200 dark:hover:bg-gray-700">
+          <Link to="/signin" className="block py-2 hover:bg-[#ffffff71] rounded px-2">
             Sign In
           </Link>
         )}
-        <button
-          onClick={toggleTheme}
-          className="mt-2 w-full text-left py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
-        >
-          {theme === "light" ? "Dark Theme" : "Light Theme"}
-        </button>
       </div>
     </div>
   );
