@@ -21,7 +21,7 @@ function Sidebar({ user }) {
   };
 
   return (
-    <div className="w-64 bg-[#52538B] text-white p-4 flex flex-col justify-between rounded-br-2xl">
+    <div className="w-64 bg-[#52538B] h-auto text-white p-4 flex flex-col justify-between rounded-br-2xl">
       <div className="mt-11">
         <h2 className="text-2xl font-bold mb-4">Task Management</h2>
         <nav className="text-xl">
