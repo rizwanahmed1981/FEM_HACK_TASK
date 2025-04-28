@@ -8,7 +8,7 @@ function TaskCard({ task, onDelete, snapshot }) {
 
   return (
     <div
-      className="bg-white dark:bg-gray-800 p-4 rounded shadow mb-4"
+      className="bg-white  p-4 rounded shadow mb-4"
       style={cardStyle}
     >
       <h3 className="text-lg font-bold">{task.title}</h3>

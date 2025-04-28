@@ -106,7 +106,7 @@ function Dashboard({ user }) {
           <select
             value={filterPriority}
             onChange={(e) => setFilterPriority(e.target.value)}
-            className="p-2 rounded bg-gray-100 dark:bg-gray-700"
+            className="p-2 rounded bg-gray-100 "
           >
             <option value="">All Priorities</option>
             <option value="low">Low</option>
@@ -144,7 +144,7 @@ function Dashboard({ user }) {
           {Object.entries(columns).map(([columnId, column]) => (
             <div
               key={columnId}
-              className="flex-shrink-0 w-80 bg-gray-100 dark:bg-gray-700 p-4 rounded"
+              className="flex-shrink-0 w-80 bg-gray-100  p-4 rounded"
             >
               <h2 className="text-xl font-bold mb-2">{column.title}</h2>
               <Droppable droppableId={columnId}>
