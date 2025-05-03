@@ -14,7 +14,7 @@ function TaskList({ user, status }) {
 
   if (!user) {
     return (
-      <div className="p-4">
+      <div className="p-4 h-screen">
         <div className="bg-white p-4 rounded shadow">
           <p>Please sign in to view tasks.</p>
           <Link to="/signin" className="text-blue-500 hover:underline">Sign In</Link>
@@ -26,7 +26,7 @@ function TaskList({ user, status }) {
   const filteredTasks = tasks.filter((task) => task.status === status);
 
   return (
-    <div className="p-4">
+    <div className="p-4 h-screen">
       <h1 className="text-2xl font-bold mb-4">{status.charAt(0).toUpperCase() + status.slice(1)} Tasks</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredTasks.map((task) => (

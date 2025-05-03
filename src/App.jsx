@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { auth } from "./firebase/firebase";
-import { ThemeContext } from "./context/ThemeContext";
 import Navbar from "./components/common/Navbar";
 import Sidebar from "./components/common/Sidebar";
 import Dashboard from "./components/tasks/Dashboard";
@@ -17,8 +16,7 @@ import { useTasks } from "./hooks/usetasks";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [theme, setTheme] = useState("light");
-  const { tasks, setTasks } = useTasks(user)
+  const { tasks, setTasks } = useTasks(user);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -27,19 +25,12 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    document.body.classList.toggle("dark", theme === "dark");
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <BrowserRouter>
-        <div className="flex h-screen">
-          <Sidebar user={user} />
+        <div className="flex ">
+          <div className="z-50">
+            <Sidebar user={user} />
+          </div>
           <div className="flex-1 flex flex-col">
             <Navbar user={user} />
             <Routes>
@@ -64,7 +55,10 @@ function App() {
                 path="/deferred"
                 element={<TaskList user={user} status="deferred" />}
               />
-              <Route path="/add-task" element={<AddTask user={user}setTasks={setTasks} />} />
+              <Route
+                path="/add-task"
+                element={<AddTask user={user} setTasks={setTasks} />}
+              />
               <Route
                 path="/edit-task/:taskId"
                 element={<EditTask user={user} />}
@@ -81,7 +75,6 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
-    </ThemeContext.Provider>
   );
 }
 

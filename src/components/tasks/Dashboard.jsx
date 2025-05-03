@@ -5,17 +5,17 @@ import AddTask from "./AddTask";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
+import { GoPlus } from "react-icons/go";
 
 function Dashboard({ user }) {
   const [showAddTask, setShowAddTask] = useState(false);
   const { tasks, setTasks } = useTasks(user);
   const [filterPriority, setFilterPriority] = useState("");
-  const [filterTag, setFilterTag] = useState("");
 
   // Define columns for all statuses
   const columns = {
     pending: {
-      title: "To-do",
+      title: "Pending",
       items: tasks.filter(
         (task) =>
           task.status === "pending" &&
@@ -31,7 +31,7 @@ function Dashboard({ user }) {
       ),
     },
     completed: {
-      title: "Done",
+      title: "Completed",
       items: tasks.filter(
         (task) =>
           task.status === "completed" &&
@@ -122,12 +122,6 @@ function Dashboard({ user }) {
             Clear Filters
           </button>
         </div>
-        <button
-          onClick={() => setShowAddTask(true)}
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >
-          Add Task
-        </button>
       </div>
 
       {showAddTask && (
@@ -142,11 +136,12 @@ function Dashboard({ user }) {
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="flex flex-wrap gap-4">
           {Object.entries(columns).map(([columnId, column]) => (
-            <div
-              key={columnId}
-              className="flex-shrink-0 w-80 bg-gray-100  p-4 rounded"
-            >
-              <h2 className="text-xl font-bold mb-2">{column.title}</h2>
+            <div key={columnId} className="flex-shrink-0 w-80  p-4 rounded">
+              <div className="bg-white rounded shadow py-2 mb-2">
+                <h2 className="text-xl font-bold text-center">
+                  {column.title}
+                </h2>
+              </div>
               <Droppable droppableId={columnId}>
                 {(provided) => (
                   <div
@@ -183,6 +178,13 @@ function Dashboard({ user }) {
                   </div>
                 )}
               </Droppable>
+              <div
+                onClick={() => setShowAddTask(true)}
+                className="w-full flex items-center justify-center gap-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+              >
+                <GoPlus />
+                <button>Add Task</button>
+              </div>
             </div>
           ))}
         </div>

@@ -51,7 +51,7 @@ function AddTask({ user, setTasks, onClose = () => {} }) {
 
   if (!user) {
     return (
-      <div className="fixed inset-0 bg-[#ffff] bg-opacity-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-[#ffff] bg-opacity-50 flex items-center justify-center h-screen">
         <div className="bg-white p-4 rounded shadow">
           <p>Please sign in to add a task.</p>
           <Link to="/signin" className="text-blue-500 hover:underline">
@@ -69,7 +69,7 @@ function AddTask({ user, setTasks, onClose = () => {} }) {
   }
 
   return (
-    <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center h-screen">
       <div className="bg-white p-4 rounded shadow w-full max-w-md">
         <h2 className="text-2xl text-[#A2B8F9] font-bold mb-4">Add Task</h2>
         <form onSubmit={handleSubmit}>

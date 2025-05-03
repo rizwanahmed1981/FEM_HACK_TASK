@@ -16,9 +16,9 @@ function Notifications({ user }) {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 h-full">
       <h1 className="text-2xl font-bold mb-4">Notifications</h1>
-      <div className="bg-[#A2B8F9] p-4 rounded shadow">
+      <div className="bg-[#A2B8F9] text-white p-4 rounded shadow">
         {notifications.length === 0 ? (
           <p>No notifications yet.</p>
         ) : (
